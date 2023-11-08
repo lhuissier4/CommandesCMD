@@ -1,4 +1,6 @@
 @echo off
+
+
 setlocal enabledelayedexpansion
 
 :: Initialisation du nombre d'arguments
@@ -22,8 +24,8 @@ if %Nb_arg% gtr 0 (
     )
 )
 
-:: Affichage du contenu du répertoire
-dir "%chemin_dacces%"
+
+dir "%chemin_dacces%" | more +4 
 
 :: Fin du script
 endlocal

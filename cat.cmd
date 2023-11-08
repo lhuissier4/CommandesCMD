@@ -8,6 +8,8 @@ for %%a in (%*) do (
 )
 set "chemin_dacces=%cd%"
 
+echo 1
+
 if "%~1"=="" ( REM vérifie d'un nom est passé en argument
     echo Erreur syntaxe attendu : %0 [NomDuFichier.extention]
     exit /b 1
@@ -23,9 +25,12 @@ if "%~1"=="" ( REM vérifie d'un nom est passé en argument
         echo Erreur le fichier n'existe pas
         exit /b 1
     )
-
+)
+echo 3
 REM ajouter le scripte pour separer le nom du fichier du chemin d'acces
-    cd chemin_dacces=%cd%
+    REM cd chemin_dacces="%cd%"
+    echo %chemin_dacces%
     type "%1"
+    REM cd ..
     exit /b 0
 endlocal

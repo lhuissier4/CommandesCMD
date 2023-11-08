@@ -1,0 +1,11 @@
+@echo off
+
+:: Définition de la fonction CountLines
+:CountLines
+setlocal enabledelayedexpansion
+for /f %%A in ('%1 ^| find /c /v ""') do set "line_count=%%A"
+endlocal & set "line_count=%line_count%"
+set line_count = %line_count%-4
+goto :eof
+
+REM dir "%chemin_dacces%" | more +4 | more +%line_count%
